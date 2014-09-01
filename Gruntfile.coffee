@@ -6,9 +6,19 @@ module.exports = (grunt) ->
         options:
           join: true
         files:
-          'build/main.js': ['src/jslib/*.coffee']
-          'build/mylib.js': ['src/nodelib/*.coffee']
+          'public/js/main.js': ['assets/javascript/*.coffee']
+          'public/js/mylib.js': ['assets/nodejs/*.coffee']
+    compass:
+      dist:
+        options:
+          sassDir: 'assets/sass'
+          cssDir: 'public/css'
+          environment: 'production'
+      dev:
+        options:
+          sassDir: 'assets/sass'
+          cssDir: 'public/css'
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
-  grunt.loadNpmTasks 'grunt-contrib-sass';
+  grunt.loadNpmTasks 'grunt-contrib-compass';
   return
