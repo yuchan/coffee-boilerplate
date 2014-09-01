@@ -13,11 +13,19 @@ module.exports = (grunt) ->
         options:
           sassDir: 'assets/sass'
           cssDir: 'public/css'
+          bundleExec: true
           environment: 'production'
       dev:
         options:
           sassDir: 'assets/sass'
           cssDir: 'public/css'
+          bundleExec: true
+    haml:
+      dist:
+        options:
+          bundleExec: true
+        files:
+          'public/index.html': 'assets/index.haml'
     watch:
       coffee:
         files: ['assets/javascript/*.coffee', 'assets/nodejs/*.coffee']
@@ -25,9 +33,13 @@ module.exports = (grunt) ->
       compass:
         files: 'assets/sass/*.sass'
         tasks: ['compass:dev']
+      haml:
+        files: 'assets/*.haml'
+        tasks: ['haml:dist']
       options:
         livereload: true
 
+  grunt.loadNpmTasks 'grunt-contrib-haml'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-compass';
