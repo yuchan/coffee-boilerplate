@@ -18,8 +18,19 @@ module.exports = (grunt) ->
         options:
           sassDir: 'assets/sass'
           cssDir: 'public/css'
+    watch:
+      coffee:
+        files: ['assets/javascript/*.coffee', 'assets/nodejs/*.coffee']
+        tasks: ['coffee:compileJoined']
+      compass:
+        files: 'assets/sass/*.sass'
+        tasks: ['compass:dev']
+      options:
+        livereload: true
 
+  grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-compass';
+
   grunt.registerTask 'default', ['coffee','compass:dist']
   return

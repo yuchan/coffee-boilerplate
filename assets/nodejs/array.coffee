@@ -1,6 +1,6 @@
 animals = [
         'dog',
-        'cat']
+        'cat',
+        'elephant']
 
 console.log animals
-
