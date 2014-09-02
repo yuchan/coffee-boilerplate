@@ -1,8 +1,10 @@
 !!!
-%html
+%html{"ng-app" => "gemStore"}
   %head
     %title sample haml
-    %link{:rel => "stylesheet", :href => "./css/main.css"}
+    %link{:rel => "stylesheet", :href => "css/main.css"}
+    %script{"src"=>"vendor/angularjs/angular.min.js"}
+    %script{"src"=>"js/main.js"}
   %body
     %h1 CoffeeScript is Awesome.
     #main

@@ -3,4 +3,5 @@ bower_components
 public/js
 public/css
 .sass-cache
-public/index.html
+public/*.html
+public/vendor

@@ -44,5 +44,5 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-compass';
 
-  grunt.registerTask 'default', ['coffee','compass:dist']
+  grunt.registerTask 'default', ['coffee','compass:dist','haml:dist']
   return
