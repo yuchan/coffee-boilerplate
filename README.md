@@ -1,4 +1,4 @@
-Coffee-Work [![Build Status](https://travis-ci.org/yuchan/coffee-work.svg?branch=master)](https://travis-ci.org/yuchan/coffee-work)
+Coffee-Boilerplate [![Build Status](https://travis-ci.org/yuchan/coffee-work.svg?branch=master)](https://travis-ci.org/yuchan/coffee-work)
 =====================
 
 ## Dependencies
@@ -12,3 +12,7 @@ Coffee-Work [![Build Status](https://travis-ci.org/yuchan/coffee-work.svg?branch
 ## Build
 
     grunt
+
+## Debug
+
+    grunt serve
