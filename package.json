@@ -1,7 +1,11 @@
 {
-  "name": "Your Project Name",
-  "version": "0.0.1",
+  "name": "Your_Project_Name",
+  "version": "0.0.2",
   "description": "Your Description",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuchan/coffee-boilerplate"
+  },
   "dependencies": {
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 {
-  "name": "Your Project Name",
-  "version": "0.0.1",
+  "name": "Your_Project_Name",
+  "version": "0.0.2",
   "authors": [
     "Yusuke Ohashi <yusuke@junkpiano.me>"
   ],
@@ -13,6 +13,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
+    "jquery": "~2.1.1"
   }
 }
