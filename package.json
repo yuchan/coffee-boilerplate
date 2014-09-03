@@ -1,7 +1,7 @@
 {
-  "name": "coffee-work",
+  "name": "Your Project Name",
   "version": "0.0.0",
-  "description": "Repo for learning CoffeeScript.",
+  "description": "Your Description",
   "dependencies": {
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 !!!
-%html{"ng-app" => "phoneStore"}
+%html
   %head
     %title sample haml
     %link{:rel => "stylesheet", :href => "css/main.css"}
@@ -8,10 +8,5 @@
     #main
       .container
         I drink coffee everyday. How about you?
-      .phoneList{"ng-controller"=>"PhonelistController as phoneList"}
-        %ul
-          %li{"ng-repeat"=>"phone in phoneList.phones"}
-            {{phone.name}}
 
-  %script{:src =>"vendor/angularjs/angular.min.js"}
   %script{:src =>"js/main.js"}
