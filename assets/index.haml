@@ -1,12 +1,17 @@
 !!!
-%html{"ng-app" => "gemStore"}
+%html{"ng-app" => "phoneStore"}
   %head
     %title sample haml
     %link{:rel => "stylesheet", :href => "css/main.css"}
-    %script{"src"=>"vendor/angularjs/angular.min.js"}
-    %script{"src"=>"js/main.js"}
   %body
     %h1 CoffeeScript is Awesome.
     #main
       .container
         I drink coffee everyday. How about you?
+      .phoneList{"ng-controller"=>"PhonelistController as phoneList"}
+        %ul
+          %li{"ng-repeat"=>"phone in phoneList.phones"}
+            {{phone.name}}
+
+  %script{:src =>"vendor/angularjs/angular.min.js"}
+  %script{:src =>"js/main.js"}

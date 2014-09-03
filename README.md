@@ -1,6 +1,14 @@
 Coffee-Work [![Build Status](https://travis-ci.org/yuchan/coffee-work.svg?branch=master)](https://travis-ci.org/yuchan/coffee-work)
 =====================
 
-## install Compass
+## Dependencies
 
-    gem install compass
+    npm install
+    bower install
+    gem update
+    gem install bundler
+    bundle install
+
+## Build
+
+    grunt
