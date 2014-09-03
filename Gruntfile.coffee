@@ -38,11 +38,18 @@ module.exports = (grunt) ->
         tasks: ['haml:dist']
       options:
         livereload: true
+    connect:
+      server:
+        options:
+          port: 9000
+          base: 'public'
 
   grunt.loadNpmTasks 'grunt-contrib-haml'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-compass';
+  grunt.loadNpmTasks 'grunt-contrib-connect';
 
   grunt.registerTask 'default', ['coffee','compass:dist','haml:dist']
+  grunt.registerTask 'serve', ['coffee', 'compass:dev', 'haml:dist', 'connect', 'watch']
   return
