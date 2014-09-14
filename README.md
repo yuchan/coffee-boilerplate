@@ -5,9 +5,6 @@ Coffee-Boilerplate [![Build Status](https://travis-ci.org/yuchan/coffee-work.svg
 
     npm install
     bower install
-    gem update
-    gem install bundler
-    bundle install
 
 ## Build
 
