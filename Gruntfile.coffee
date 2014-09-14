@@ -8,34 +8,26 @@ module.exports = (grunt) ->
         files:
           'public/js/main.js': ['assets/javascript/*.coffee']
           'public/js/mylib.js': ['assets/nodejs/*.coffee']
-    compass:
-      dist:
-        options:
-          sassDir: 'assets/sass'
-          cssDir: 'public/css'
-          bundleExec: true
-          environment: 'production'
-      dev:
-        options:
-          sassDir: 'assets/sass'
-          cssDir: 'public/css'
-          bundleExec: true
-    haml:
-      dist:
-        options:
-          bundleExec: true
+    stylus:
+      compile:
         files:
-          'public/index.html': 'assets/index.haml'
+          'public/css/main.css': 'assets/stylus/*.styl'
+    jade:
+      compile:
+        options:
+          data:
+            debug: false
+        files: "public/index.html": ["assets/templates/*.jade", "assets/index.jade"]
     watch:
       coffee:
         files: ['assets/javascript/*.coffee', 'assets/nodejs/*.coffee']
         tasks: ['coffee:compileJoined']
-      compass:
-        files: 'assets/sass/*.sass'
-        tasks: ['compass:dev']
-      haml:
-        files: 'assets/*.haml'
-        tasks: ['haml:dist']
+      stylus:
+        files: 'assets/stylus/*.styl'
+        tasks: ['stylus:compile']
+      jade:
+        files: 'assets/*.jade'
+        tasks: ['jade:compile']
       options:
         livereload: true
     connect:
@@ -44,12 +36,12 @@ module.exports = (grunt) ->
           port: 9000
           base: 'public'
 
-  grunt.loadNpmTasks 'grunt-contrib-haml'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
-  grunt.loadNpmTasks 'grunt-contrib-compass';
-  grunt.loadNpmTasks 'grunt-contrib-connect';
+  grunt.loadNpmTasks 'grunt-contrib-jade'
+  grunt.loadNpmTasks 'grunt-contrib-stylus'
+  grunt.loadNpmTasks 'grunt-contrib-connect'
 
-  grunt.registerTask 'default', ['coffee','compass:dist','haml:dist']
-  grunt.registerTask 'serve', ['coffee', 'compass:dev', 'haml:dist', 'connect', 'watch']
+  grunt.registerTask 'default', ['coffee','stylus:compile','jade:compile']
+  grunt.registerTask 'serve', ['coffee', 'stylus:compile', 'jade:compile', 'connect', 'watch']
   return
